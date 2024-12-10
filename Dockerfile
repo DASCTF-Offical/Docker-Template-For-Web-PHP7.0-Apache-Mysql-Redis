@@ -17,7 +17,7 @@ RUN chown -R root:root /var/www/html/ && \
     cp -f /tmp/files/redis.conf /etc/redis/redis.conf && \
     rm -rf /tmp/files && \
     docker-php-ext-install mysqli pdo pdo_mysql && \
-    pecl install redis && \
+    pecl install redis-5.3.4 && \
     echo "extension=redis.so\n" >> /usr/local/etc/php/conf.d/docker-php-ext-redis.ini && \
     rm -rf /var/lib/apt/lists/*
 CMD /start.sh
